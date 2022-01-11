@@ -4,16 +4,17 @@ import React from 'react';
 import Brand from './components/Brand';
 import CatButon from './components/CatButon';
 import Search from './components/Search';
+import FicheVin from './components/FicheVin';
 
 export default class App extends React.Component {
   render() {
 
     return (
       <View style={styles.container}>
-         <Search />
-        <Brand name="Rémi" />
+        {/* <Brand name="Rémi" /> */}
         {/* <CatButon /> */}
-       
+        <FicheVin />
+        <Search />
       </View>
     );
     }}

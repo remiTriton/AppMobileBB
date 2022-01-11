@@ -2,13 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View, Button, TextInput, loginButton, loginTextSection, loginButtonSection, ScrollView } from 'react-native';
 import React from 'react';
 import ArchesB from '.././assets/ArchesB.png';
+import { CurrentRenderContext } from '@react-navigation/native';
 
 export default class Brand extends React.Component {
   render() {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <Image source={ArchesB} style={{ width: 250, height: 159, marginTop: 40 }} />
+          <Image source={ArchesB} style={{ width: 250, height: 159, marginTop: 250 }} />
           <Text style={{ marginVertical: 20, fontSize: 20, color: '#fff' }}>Bonjour {this.props.name} bienvenue !</Text>
 
           {/* <View style={styles.loginTextSection}>
