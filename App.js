@@ -1,16 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import EnTete from './components/EnTete';
-import CatButon from './components/CatButton';
+import Brand from './components/Brand';
+import CatButon from './components/CatButon';
+import Search from './components/Search';
 
 export default class App extends React.Component {
   render() {
 
     return (
       <View style={styles.container}>
-        <EnTete name="Rémi" />
+        <Brand name="Rémi" />
         <CatButon />
+        {/* <Search /> */}
       </View>
     );
     }}
