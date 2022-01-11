@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
-import Header from '../components/Header';
-
+import EnTete from './components/EnTete';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header name="Rémi"/>      
+        <EnTete name="Rémi"/>      
       </View>
     );
   }
