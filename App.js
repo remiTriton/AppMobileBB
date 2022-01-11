@@ -10,9 +10,10 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
+         <Search />
         <Brand name="Rémi" />
-        <CatButon />
-        {/* <Search /> */}
+        {/* <CatButon /> */}
+       
       </View>
     );
     }}
