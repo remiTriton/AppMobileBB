@@ -13,7 +13,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {/* <Brand name="Rémi" /> */}
         {/* <CatButon /> */}
-        <FicheVin />
+        {/* <FicheVin /> */}
         <Search />
       </View>
     );
