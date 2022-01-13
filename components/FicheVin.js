@@ -32,6 +32,7 @@ class FicheVin extends React.Component {
 const styles = StyleSheet.create({
   main_container: {
     height: 190,
+    marginTop: 30,
     flexDirection: 'row'
   },
   image: {
