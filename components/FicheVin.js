@@ -25,8 +25,8 @@ const fiche = Wines.map((wine)=>
 </View>
 </View>
     );
-     return (<div>
-     {fiche}</div>
+     return (<Div>
+     {fiche}</Div>
     )
   }
 }
