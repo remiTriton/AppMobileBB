@@ -8,7 +8,7 @@ const fiche = Wines.map((wine)=>
 <View key={wine.id}style={styles.main_container}>
 <Image
   style={styles.image}
-  source={{ uri: "image" }}
+  source={{ uri: "image.id" }}
 />
 <View style={styles.content_container}>
   <View style={styles.header_container}>
