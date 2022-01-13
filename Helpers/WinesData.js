@@ -2,7 +2,7 @@
 const Wines = [
     {
         id:1,
-        couleur: "Magnum (rouge)",
+        couleur: "Rouge",
         pa: 35,
         cuvee: "LES ORGUES",
         vigneron: "DOMAINE DE L’ARBRE BLANC",
@@ -12,7 +12,7 @@ const Wines = [
     },
     {
         id:2,
-        couleur: "Magnum (rouge)",
+        couleur: "Rouge",
         pa: 40,
         cuvee: "LA FLEUR AU FUSIL",
         vigneron: "LES VINS DU CABANON",
