@@ -12,15 +12,15 @@ const fiche = Wines.map((wine)=>
 />
 <View style={styles.content_container}>
   <View style={styles.header_container}>
-    <Text style={styles.cuvee_text}>{Wines.cuvee}</Text>
-    <Text style={styles.couleur_text}>{Wines.couleur}</Text>
+    <Text style={styles.cuvee_text}>{wine.cuvee}</Text>
+    <Text style={styles.couleur_text}>{wine.couleur}</Text>
   </View>
   <View style={styles.description_container}>
-    <Text style={styles.description_text} numberOfLines={6}>{Wines.overview}</Text>
+    <Text style={styles.description_text} numberOfLines={6}>{wine.overview}</Text>
     {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
   </View>
   <View style={styles.date_container}>
-    <Text style={styles.quantite_text}>{Wines.quantite}</Text>
+    <Text style={styles.quantite_text}>{wine.quantite}</Text>
   </View>
 </View>
 </View>
