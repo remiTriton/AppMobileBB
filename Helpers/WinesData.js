@@ -1,5 +1,5 @@
 
-export default data = [
+const Wines = [
     {
         id:1,
         couleur: "Magnum (rouge)",
@@ -21,3 +21,5 @@ export default data = [
         description:"sucré"
     }
 ]
+
+export default Wines;

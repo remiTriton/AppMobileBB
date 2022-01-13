@@ -4,27 +4,29 @@ import Wines from '../Helpers/WinesData';
 
 class FicheVin extends React.Component {
   render() {
-    // const Wines = this.props.Wines
-     return (
-      <View style={styles.main_container}>
-        <Image
-          style={styles.image}
-          source={{ uri: "image" }}
-        />
-        <View style={styles.content_container}>
-          <View style={styles.header_container}>
-            <Text style={styles.cuvee_text}>{Wines.cuvee}</Text>
-            <Text style={styles.couleur_text}>{Wines.couleur}</Text>
-          </View>
-          <View style={styles.description_container}>
-            <Text style={styles.description_text} numberOfLines={6}>{Wines.overview}</Text>
-            {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
-          </View>
-          <View style={styles.date_container}>
-            <Text style={styles.quantite_text}>{Wines.quantite}</Text>
-          </View>
-        </View>
-      </View>
+const fiche = Wines.map((wine)=> 
+<View key={wine.id}style={styles.main_container}>
+<Image
+  style={styles.image}
+  source={{ uri: "image" }}
+/>
+<View style={styles.content_container}>
+  <View style={styles.header_container}>
+    <Text style={styles.cuvee_text}>{Wines.cuvee}</Text>
+    <Text style={styles.couleur_text}>{Wines.couleur}</Text>
+  </View>
+  <View style={styles.description_container}>
+    <Text style={styles.description_text} numberOfLines={6}>{Wines.overview}</Text>
+    {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
+  </View>
+  <View style={styles.date_container}>
+    <Text style={styles.quantite_text}>{Wines.quantite}</Text>
+  </View>
+</View>
+</View>
+    );
+     return (<div>
+     {fiche}</div>
     )
   }
 }
