@@ -1,35 +1,65 @@
-import React from 'react'
-import { StyleSheet, View, Text, Image} from 'react-native'
-import Wines from '../Helpers/WinesData';
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, View, Text, Image } from 'react-native'
 
-class FicheVin extends React.Component {
-  render() {
-const fiche = Wines.map((wine)=> 
-<View key={wine.id}style={styles.main_container}>
-<Image
-  style={styles.image}
-  source={{ uri: "image.id" }}
-/>
-<View style={styles.content_container}>
-  <View style={styles.header_container}>
-    <Text style={styles.cuvee_text}>{wine.cuvee}</Text>
-    <Text style={styles.couleur_text}>{wine.couleur}</Text>
-  </View>
-  <View style={styles.description_container}>
-    <Text style={styles.description_text} numberOfLines={6}>{wine.description}</Text>
-    {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
-  </View>
-  <View style={styles.date_container}>
-    <Text style={styles.quantité_text}>{wine.quantité}</Text>
-  </View>
-</View>
-</View>
+export default function FicheVin() {
+  const [wines, setWines] = useState([]);
+  const [pictures, setPictures] = useState([]);
+
+  const getWines = async () => {
+    try {
+      const response = await fetch('https://stock.babelbabel.fr/api/wines/all/0/24');
+      const data = await response.json();
+      setWines(data.wines);
+      console.log(json.wines)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getWines();
+  }, []);
+
+  //new fonct picture
+  const fetchPic = async () => {
+    const res = await fetch(
+      "https://stock.babelbabel.fr/api/wines/all/_id/imgBase64/"
     );
-     return (<View>
-     {fiche}</View>
-    )
+    const data = await res.json();
+    for (let post of data["data"]) {
+      for (let img of post["img64BAse"]) {
+        if (img['type'] == "image/png" || img["type"] == "image/jpeg") {
+          setPictures => [...pictures, img];
+        }
+      }
+    }
+    useEffect(() => {
+      fetchPic();
+    }, []);
   }
+  return (wines.map((wine) =>
+    <View key={wine.id} style={styles.main_container}>
+      <Image
+        style={styles.image}
+        source={{ uri: "imgBase64" }}
+      />
+      <View style={styles.content_container}>
+        <View style={styles.header_container}>
+          <Text style={styles.cuvee_text}>{wine.cuvee}</Text>
+          <Text style={styles.couleur_text}>{wine.couleur}</Text>
+        </View>
+        <View style={styles.description_container}>
+          <Text style={styles.description_text} numberOfLines={6}>{wine.description}</Text>
+          {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
+        </View>
+        <View style={styles.date_container}>
+          <Text style={styles.quantite_text}>{wine.quantite}</Text>
+        </View>
+      </View>
+    </View>
+  )
+  )
 }
+
 
 const styles = StyleSheet.create({
   main_container: {
@@ -53,7 +83,7 @@ const styles = StyleSheet.create({
   },
   cuvee_text: {
     fontWeight: 'bold',
-    color:"#fff",
+    color: "#fff",
     fontSize: 20,
     flex: 1,
     flexWrap: 'wrap',
@@ -76,10 +106,8 @@ const styles = StyleSheet.create({
   },
   quantite_text: {
     textAlign: 'right',
-    fontSize: 20,
+    fontSize: 15,
     color: '#fff'
 
   }
 })
-
-export default FicheVin
