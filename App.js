@@ -23,7 +23,6 @@ export default class App extends React.Component {
       container: {
         flex: 1,
         backgroundColor: '#2a574c',
-        // alignItems: 'center',
         justifyContent: 'center',
       },
     });

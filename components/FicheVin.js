@@ -1,14 +1,14 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
-import Wines from '../Helpers/WinesData';
+import { StyleSheet, View, Text, Image} from 'react-native'
+import wines from './Api/BBapi';
 
 class FicheVin extends React.Component {
   render() {
-const fiche = Wines.map((wine)=> 
+const fiche = wines.map((wine)=> 
 <View key={wine.id}style={styles.main_container}>
 <Image
   style={styles.image}
-  source={{ uri: "image" }}
+  source={{ uri: "image.id" }}
 />
 <View style={styles.content_container}>
   <View style={styles.header_container}>
@@ -25,8 +25,8 @@ const fiche = Wines.map((wine)=>
 </View>
 </View>
     );
-     return (<Div>
-     {fiche}</Div>
+     return (<View>
+     {fiche}</View>
     )
   }
 }
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 180,
     margin: 5,
-    backgroundColor: 'gray'
+    backgroundColor: '#fff'
   },
   content_container: {
     flex: 1,
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   },
   cuvee_text: {
     fontWeight: 'bold',
+    color:"#fff",
     fontSize: 20,
     flex: 1,
     flexWrap: 'wrap',
@@ -60,22 +61,24 @@ const styles = StyleSheet.create({
   },
   couleur_text: {
     fontWeight: 'bold',
-    fontSize: 26,
-    color: '#666666'
+    fontSize: 20,
+    color: '#fff'
   },
   description_container: {
     flex: 7
   },
   description_text: {
     fontStyle: 'italic',
-    color: '#666666'
+    color: '#fff'
   },
   date_container: {
     flex: 1
   },
   quantite_text: {
     textAlign: 'right',
-    fontSize: 14
+    fontSize: 20,
+    color: '#fff'
+
   }
 })
 

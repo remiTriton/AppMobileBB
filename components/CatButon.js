@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { Button, StyleSheet, View, ScrollView } from 'react-native';
 
 export default class CatButon extends Component {
+
+  
   _onPressButton() {
     alert('You tapped the button!')
   }
-
+  
   render() {
     return (
         <ScrollView>
@@ -77,6 +79,7 @@ const styles = StyleSheet.create({
   container: {
    flex: 1,
    justifyContent: 'center',
+  //  alignItems: 'center',
   },
   buttonContainer: {
     backgroundColor: '#3C7D6D',
