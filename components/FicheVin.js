@@ -21,10 +21,11 @@ export default function FicheVin() {
 
   //new fonct picture
   const fetchPic = async () => {
-    const res = await fetch(
-      "https://stock.babelbabel.fr/api/wines/all/_id/imgBase64/"
+    const response = await fetch(
+      "https://stock.babelbabel.fr/api/wines/_id/imgBase64/data:image/png;base64/"
     );
-    const data = await res.json();
+    const data = await response.json();
+    setPictures(data.wines);
     for (let post of data["data"]) {
       for (let img of post["img64BAse"]) {
         if (img['type'] == "image/png" || img["type"] == "image/jpeg") {
