@@ -1,7 +1,6 @@
-
 const Wines = [
     {
-        id:1,
+        _id:1,
         couleur: "Rouge",
         pa: 35,
         cuvee: "LES ORGUES",

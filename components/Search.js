@@ -1,24 +1,43 @@
-import React from 'react'
-import { View, Button, TextInput, StyleSheet, FlatList, Text } from 'react-native'
-import Wines from '../Helpers/WinesData';
+import React, {useEffect, useState} from 'react'
+import {View, Button, TextInput, StyleSheet, FlatList, Text} from 'react-native'
 import FicheVin from '../components/FicheVin';
 
+export default function () {
+    const [wines, setWines] = useState([]);
 
-class Search extends React.Component {
-    render() {
-        return (
-            <View style={styles.main_container}>           
-                    <FlatList           
-                        data={Wines}
-                        keyExtractor={item => item.id.toString()}
-                        renderItem={({ item }) => <FicheVin Wines={item}/>}                           
-                         />     
-                         <TextInput style={styles.textinput} placeholder="Nom de la Cuvée" />
-                <Button style={{ height: 50 }} title="Rechercher" onPress={() => { }} />      
-            </View>
-        )
-    }
+    const getWines = async () => {
+        try {
+            const response = await fetch('https://stock.babelbabel.fr/api/wines/all/0/24');
+            const data = await response.json();
+
+            return data.wines;
+        } catch (error) {
+            console.log(error);
+            return [];
+        }
+    };
+
+    useEffect(async () => {
+        const wines = await getWines();
+        console.log('nb of wines: ', wines.length);
+        setWines(wines);
+    }, []);
+
+    return (
+        <View style={styles.main_container}>
+            <FlatList
+                data={wines}
+                keyExtractor={(item) => String(item._id)}
+                renderItem={({ item }) => <FicheVin wine={item} />} />
+
+            <TextInput style={styles.textinput} placeholder="Nom de la Cuvée"/>
+
+            <Button style={{height: 50}} title="Rechercher" onPress={() => {
+            }}/>
+        </View>
+    );
 }
+
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
@@ -37,4 +56,3 @@ const styles = StyleSheet.create({
         paddingLeft: 5
     },
 })
-export default Search
