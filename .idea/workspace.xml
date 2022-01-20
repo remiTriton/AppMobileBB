@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9370eca4-5575-4fe8-8892-eff55e29c7ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Api/BBApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Api/BBApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FicheVin.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FicheVin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
     </list>
-    <list id="f79a16a7-699a-4aaa-b157-0e98869a0e48" name="Changes by tcy" comment="">
-      <change beforePath="$PROJECT_DIR$/Helpers/WinesData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/WinesData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
-    </list>
+    <list id="f79a16a7-699a-4aaa-b157-0e98869a0e48" name="Changes by tcy" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,16 +23,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/components/Search.js">
-      <ranges>
-        <range start1="0" end1="3" start2="0" end2="2" changelist="9370eca4-5575-4fe8-8892-eff55e29c7ea" />
-        <range start1="4" end1="5" start2="3" end2="3" changelist="f79a16a7-699a-4aaa-b157-0e98869a0e48" />
-        <range start1="6" end1="21" start2="4" end2="40" changelist="9370eca4-5575-4fe8-8892-eff55e29c7ea" />
-        <range start1="39" end1="40" start2="58" end2="58" changelist="f79a16a7-699a-4aaa-b157-0e98869a0e48" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
