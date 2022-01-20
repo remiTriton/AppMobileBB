@@ -5,6 +5,7 @@ export default function FicheVin() {
   const [wines, setWines] = useState([]);
   const [pictures, setPictures] = useState([]);
 
+
   const getWines = async () => {
     try {
       const response = await fetch('https://stock.babelbabel.fr/api/wines/all/0/24');
