@@ -1,32 +1,33 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image} from 'react-native'
-import wines from './Api/BBapi';
+import { StyleSheet, View, Text, Image } from 'react-native'
+import wines from './Api/BBApi';
 
 class FicheVin extends React.Component {
   render() {
-const fiche = wines.map((wine)=> 
-<View key={wine.id}style={styles.main_container}>
-<Image
-  style={styles.image}
-  source={{ uri: "image.id" }}
-/>
-<View style={styles.content_container}>
-  <View style={styles.header_container}>
-    <Text style={styles.cuvee_text}>{wine.cuvee}</Text>
-    <Text style={styles.couleur_text}>{wine.couleur}</Text>
-  </View>
-  <View style={styles.description_container}>
-    <Text style={styles.description_text} numberOfLines={6}>{wine.overview}</Text>
-    {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
-  </View>
-  <View style={styles.date_container}>
-    <Text style={styles.quantite_text}>{wine.quantité}</Text>
-  </View>
-</View>
-</View>
+    const fiche = wines.map((wine) =>
+      <View key={wine.id} style={styles.main_container}>
+        <Image
+          style={styles.image}
+          source={{ uri: "image.id" }}
+        />
+        <View style={styles.content_container}>
+          <View style={styles.header_container}>
+            <Text style={styles.cuvee_text}>{wine.cuvee}</Text>
+            <Text style={styles.couleur_text}>{wine.couleur}</Text>
+          </View>
+          <View style={styles.description_container}>
+            <Text style={styles.description_text} numberOfLines={6}>{wine.overview}</Text>
+            {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
+          </View>
+          <View style={styles.date_container}>
+            <Text style={styles.quantite_text}>{wine.quantité}</Text>
+          </View>
+        </View>
+      </View>
     );
-     return (<View>
-     {fiche}</View>
+    return (<View>
+      {fiche}
+    </View>
     )
   }
 }
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   },
   cuvee_text: {
     fontWeight: 'bold',
-    color:"#fff",
+    color: "#fff",
     fontSize: 20,
     flex: 1,
     flexWrap: 'wrap',
